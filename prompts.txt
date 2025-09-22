@@ -1,0 +1,5 @@
+MAKE an educational app for the the algerian academic schools , make the app in arabic
+add english language and islamic education as teaching subjects
+change the date from 2023 to 2026
+CHANGE THE NAME TO منصة فنك التعليمية الجزائرية / fennec algerian learning platform
+make the app ready to be published in playstore

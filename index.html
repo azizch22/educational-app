@@ -1,295 +1,153 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#0083b0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="manifest" href="/manifest.json">
-    <title>منصة التعليم الجزائرية</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
-        body {
-            font-family: 'Tajawal', sans-serif;
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+    }
+    header {
+      background: #004080;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    nav {
+      background: #003366;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+    }
+    nav ul li a:hover {
+      background: #0059b3;
+    }
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #004080;
+      min-width: 180px;
+      z-index: 999;
+    }
+    nav ul li:hover ul {
+      display: block;
+    }
+    nav ul li ul li a {
+      padding: 10px 15px;
+    }
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    main h2 {
+      color: #004080;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card a {
+      text-decoration: none;
+      color: #004080;
+      font-weight: bold;
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-4">
-                    <img src="http://static.photos/blue/200x200/1" alt="Logo" class="h-12 w-12 rounded-full">
-                    <span class="font-bold text-xl text-blue-800">منصة فنك التعليمية الجزائرية</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-blue-800 font-medium hover:text-blue-600">الرئيسية</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600">المواد الدراسية</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600">الامتحانات</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600">المعلمين</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600">المكتبة</a>
-                </div>
-                <div class="md:hidden">
-                    <button class="text-gray-600 focus:outline-none">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient text-white py-20">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6">منصة فنك التعليمية الجزائرية</h1>
-                    <p class="text-xl mb-8">Fennec Algerian Learning Platform - منصة متكاملة لدعم العملية التعليمية في المدارس الجزائرية</p>
-                    <p class="text-xl mb-8">منصة متكاملة لدعم العملية التعليمية في المدارس الجزائرية</p>
-                    <div class="flex space-x-4">
-                        <button class="bg-white text-blue-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">تسجيل الدخول</button>
-                        <button class="border border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-800 transition">التسجيل</button>
-                    </div>
-                </div>
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <img src="http://static.photos/education/640x360/1" alt="Students Learning" class="rounded-lg shadow-xl">
-                </div>
-            </div>
-        </div>
-    </section>
+  <header>
+    <h1>Educational App</h1>
+    <p>Your resource for lessons, exams, and books</p>
+  </header>
 
-    <!-- Features Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-800 mb-16">مميزات المنصة</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center" data-aos="zoom-in">
-                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
-                        <i data-feather="book" class="text-blue-800 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-blue-800">مواد دراسية شاملة</h3>
-                    <p class="text-gray-600">مناهج دراسية كاملة لجميع المراحل التعليمية وفق المنهج الجزائري</p>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
-                        <i data-feather="clipboard" class="text-blue-800 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-blue-800">امتحانات تجريبية</h3>
-                    <p class="text-gray-600">بنك أسئلة وامتحانات سابقة لمساعدة الطلاب على التحضير الجيد</p>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
-                        <i data-feather="video" class="text-blue-800 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-blue-800">دروس فيديو</h3>
-                    <p class="text-gray-600">دروس مسجلة من أفضل المعلمين لشرح المواد بطريقة مبسطة</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <nav>
+    <ul>
+      <li><a href="#">Levels ▾</a>
+        <ul>
+          <li><a href="levels/primary.html">Primary School</a></li>
+          <li><a href="levels/middle.html">Middle School</a></li>
+          <li><a href="levels/secondary.html">Secondary School</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Subjects ▾</a>
+        <ul>
+          <li><a href="subjects/math.html">Mathematics</a></li>
+          <li><a href="subjects/arabic.html">Arabic</a></li>
+          <li><a href="subjects/english.html">English</a></li>
+          <li><a href="subjects/french.html">French</a></li>
+          <li><a href="subjects/science.html">Science</a></li>
+          <li><a href="subjects/history.html">History & Geography</a></li>
+          <li><a href="subjects/philosophy.html">Philosophy</a></li>
+          <li><a href="subjects/it.html">Informatics</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Resources ▾</a>
+        <ul>
+          <li><a href="content/lessons/">Lessons</a></li>
+          <li><a href="content/exams/">Exams</a></li>
+          <li><a href="content/exercises/">Exercises</a></li>
+          <li><a href="content/books/">Books</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
-    <!-- Subjects Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-800 mb-16">المواد الدراسية</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition" data-aos="fade-up">
-                    <div class="bg-red-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="globe" class="text-red-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">اللغة العربية</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition" data-aos="fade-up">
-                    <div class="bg-blue-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="globe" class="text-blue-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">اللغة الإنجليزية</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-blue-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="globe" class="text-blue-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">اللغة الفرنسية</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-green-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="divide" class="text-green-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">الرياضيات</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-yellow-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="atom" class="text-yellow-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">العلوم الفيزيائية</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition" data-aos="fade-up">
-                    <div class="bg-purple-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="activity" class="text-purple-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">علوم الطبيعة</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-indigo-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="map" class="text-indigo-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">الجغرافيا</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-pink-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="book-open" class="text-pink-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">التاريخ</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-teal-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="cpu" class="text-teal-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">الإعلام الآلي</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition" data-aos="fade-up">
-                    <div class="bg-orange-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="book" class="text-orange-600 w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">التربية الإسلامية</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+  <main>
+    <h2>Quick Access</h2>
+    <div class="card-grid">
+      <div class="card"><a href="levels/primary.html">Primary School</a></div>
+      <div class="card"><a href="levels/middle.html">Middle School</a></div>
+      <div class="card"><a href="levels/secondary.html">Secondary School</a></div>
+      <div class="card"><a href="subjects/math.html">Mathematics</a></div>
+      <div class="card"><a href="content/exams/">Exams & Solutions</a></div>
+      <div class="card"><a href="content/books/">Books & Guides</a></div>
+    </div>
+  </main>
 
-    <!-- Testimonials -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-800 mb-16">آراء المستخدمين</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up">
-                    <div class="flex items-center mb-6">
-                        <img src="http://static.photos/people/200x200/1" alt="Student" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">أحمد بوعزة</h4>
-                            <p class="text-gray-500 text-sm">طالب - ثانوية</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"المنصة ساعدتني كثيراً في فهم المواد الصعبة خاصة الرياضيات والفيزياء، الدروس واضحة والمحتوى مرتبط بالمنهج الجزائري."</p>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-6">
-                        <img src="http://static.photos/people/200x200/2" alt="Teacher" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">سارة قاسمي</h4>
-                            <p class="text-gray-500 text-sm">معلمة - ابتدائي</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"أستخدم المنصة كمصدر إضافي لطلابي، المحتوى ممتاز ومنظم بطريقة تسهل على الطلاب الفهم والاستيعاب."</p>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-6">
-                        <img src="http://static.photos/people/200x200/3" alt="Parent" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">خالد مرزوق</h4>
-                            <p class="text-gray-500 text-sm">ولي أمر</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"ابنتي تحسنت درجاتها بشكل ملحوظ بعد استخدام المنصة، أشكر القائمين على هذا العمل الرائع."</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer>
+    <p>© 2025 Educational App | Built for Algerian Students</p>
+  </footer>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-blue-800 text-white">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">انضم إلى منصتنا التعليمية الآن</h2>
-            <p class="text-xl mb-10">سجل الآن واحصل على وصول كامل لجميع المواد والامتحانات والدروس</p>
-            <button class="bg-white text-blue-800 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">ابدأ التعلم الآن</button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">منصة فنك التعليمية</h3>
-                    <p class="text-gray-400">Fennec Algerian Learning Platform - منصة تعليمية متكاملة لدعم العملية التعليمية في الجزائر</p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">روابط سريعة</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">الرئيسية</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">المواد الدراسية</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">الامتحانات</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">المكتبة</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">تواصل معنا</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
-                            <span class="text-gray-400">contact@edu-dz.com</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
-                            <span class="text-gray-400">+213 123 456 789</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
-                            <span class="text-gray-400">الجزائر العاصمة</span>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">تابعنا</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600">
-                            <i data-feather="facebook"></i>
-                        </a>
-                        <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-400">
-                            <i data-feather="twitter"></i>
-                        </a>
-                        <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-600">
-                            <i data-feather="youtube"></i>
-                        </a>
-                        <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-600">
-                            <i data-feather="instagram"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>© 2026 منصة فنك التعليمية الجزائرية. جميع الحقوق محفوظة.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        AOS.init();
-        feather.replace();
-        
-        // Register Service Worker
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registration successful');
-                    })
-                    .catch(err => {
-                        console.log('ServiceWorker registration failed: ', err);
-                    });
-            });
-        }
-    </script>
 </body>
 </html>
